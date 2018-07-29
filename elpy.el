@@ -3677,7 +3677,7 @@ display the current class and method instead."
                   (params (mapcar (lambda (param)
                                     (car (split-string param "^param " t)))
                                   (cdr (assq 'params calltip)))))
-              (when index
+              (when (and index (nth index params))
                 (setf (nth index params)
                       (propertize (nth index params)
                                   'face
